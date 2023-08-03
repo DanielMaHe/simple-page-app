@@ -1,8 +1,16 @@
+import { BrowserRouter } from "react-router-dom";
+import NavbarLink from "./Components/navbarLink";
+import { AuthProvider } from "./Context/authContext";
+import SPA from "./SPA/SPA";
+
 function App() {
   return (
-    <div className="App">
-      <p>Hellow World</p>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <NavbarLink />
+        <SPA />
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
