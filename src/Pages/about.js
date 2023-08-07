@@ -1,12 +1,19 @@
+import styled from "@emotion/styled";
 import React from "react";
+
+
+const Container = styled.div`
+  text-align: center;
+  font-size: 50px;
+`;
 
 const About = ({ isLoggedIn }) => {
   return (
-    <div>
+    <Container>
       {isLoggedIn
-        ? "About us page content. You are logged in."
-        : "About us page content. Please login to see more."}
-    </div>
+        ? "About: You are logged in."
+        : "About"}
+    </Container>
   );
 };
 
