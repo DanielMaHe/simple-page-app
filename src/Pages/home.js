@@ -1,13 +1,22 @@
 import React from "react";
+import styled from "@emotion/styled";
 
-const Home = ({ isLoggedIn }) => {
-  return (
-    <div>
-      {isLoggedIn
-        ? "Welcome to the Home page! You are logged in."
-        : "Welcome to the Home page! Please login to see more."}
-    </div>
-  );
-};
+
+  const Container = styled.div`
+  text-align: center;
+  font-size: 50px;
+  `;
+  
+    const Home = ({ isLoggedIn }) => {
+    return (
+      <Container>
+        {isLoggedIn
+          ? "Home: You are logged in."
+          : "Home"}
+      </Container>
+    );
+  };
+  
+  
 
 export default Home;
