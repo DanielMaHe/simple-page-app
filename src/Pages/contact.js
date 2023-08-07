@@ -1,13 +1,21 @@
+import styled from "@emotion/styled";
 import React from "react";
+
+
+const Container = styled.div`
+  text-align: center;
+  font-size: 50px;
+`;
 
 const Contact = ({ isLoggedIn }) => {
   return (
-    <div>
+    <Container>
       {isLoggedIn
-        ? "Contact us page content. You are logged in."
-        : "Contact us page content. Please login to see more."}
-    </div>
+        ? "Contact: You are logged in."
+        : "Contact"}
+    </Container>
   );
 };
+
 
 export default Contact;
