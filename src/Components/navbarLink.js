@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/authContext";
 import styled from "@emotion/styled";
 
@@ -16,17 +16,33 @@ const LinkStyled = styled(Link)`
 `;
 
 const UlSyled = styled.ul`
-  aparence: none;
+  appearance: none;
   display: flex;
   gap: 10px;
-  align-items: space-between;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+
+  button {
+    background: cornflowerblue;
+    border: none;
+    color: white;
+  }
 `;
 const Navstyled = styled.nav`
-  width: 5rem;
+  width: 17rem;
   height: 2.5rem;
+  margin: auto;
+  font-size: 20px;
 `;
 const NavbarLink = () => {
   const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleClick() {
+    logout();
+    navigate(`/home`);
+  }
 
   return (
     <Navstyled>
@@ -38,9 +54,9 @@ const NavbarLink = () => {
         <LinkStyled to="/contact">Contact</LinkStyled>
 
         {isLoggedIn ? (
-          <button onClick={logout}>Logout</button>
+          <button onClick={handleClick}>Bye</button>
         ) : (
-          <LinkStyled to="/login">Login</LinkStyled>
+          <LinkStyled to="/login">BIRTHDAY?</LinkStyled>
         )}
       </UlSyled>
     </Navstyled>
