@@ -4,6 +4,10 @@ const AuthContext = createContext();
 
 function AuthProvider(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    date: "",
+  });
 
   function login() {
     setIsLoggedIn(true);
@@ -17,6 +21,8 @@ function AuthProvider(props) {
     login,
     logout,
     isLoggedIn,
+    formData,
+    setFormData,
   };
 
   return <AuthContext.Provider value={value} {...props} />;
